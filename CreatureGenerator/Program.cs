@@ -15,9 +15,32 @@ namespace CreatureGenerator
         public const string xmlPath = "../../../creatures.xml";
         public static void Main(string[] args)
         {
-            List<Creature> creatures = GenerateCreatures();
-            Console.WriteLine(string.Join(",", creatures));
-            WriteCreaturesToXml(creatures, xmlPath);
+            try
+            {
+                List<Creature> creatures = GenerateCreatures();
+                Console.WriteLine(string.Join(",", creatures));
+                WriteCreaturesToXml(creatures, xmlPath);
+            }
+            catch (SerializationException ex)
+            {
+                Console.WriteLine("Ошибка сериализации объекта.");
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine("Ошибка ввода/вывода.");
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine("У вас нет разрешения на создание файла.");
+            }
+            catch (System.Security.SecurityException ex)
+            {
+                Console.WriteLine("Ошибка безопасности.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Произошла непредвиденная ошибка. {ex.Message}");
+            }
         }
         public static void WriteCreaturesToXml(List<Creature> creatures, string path)
         {

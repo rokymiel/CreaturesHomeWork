@@ -18,15 +18,19 @@ namespace CreatureAnalyzer
                 List<Creature> creatures = ReadCreaturesFromXml(xmlPath);
                 WriteSwimming(creatures);
                 Console.WriteLine(new string('=', 50));
-                WriteCreaturesSortedByHeath(creatures);
+                WriteCreaturesSortedByHeath(creatures, "Сортировка по здоровью");
                 Console.WriteLine(new string('=', 50));
                 var group = WriteGroupOfCreatures(creatures);
                 Console.WriteLine(new string('=', 50));
-                WriteSortedGroup(group);
+                WriteCreaturesSortedByHeath(group, "Сортировка предыдущего списка по здоровью");
             }
             catch (FileNotFoundException ex)
             {
                 Console.WriteLine("Файл не найден.");
+            }
+            catch (SerializationException ex)
+            {
+                Console.WriteLine("Ошибка создания списка объектов из файла.");
             }
             catch (IOException ex)
             {
@@ -40,23 +44,11 @@ namespace CreatureAnalyzer
             {
                 Console.WriteLine("Ошибка безопасности.");
             }
-            catch (SerializationException ex)
+            catch(Exception ex)
             {
-                Console.WriteLine("Ошибка создания списка объектов из файла.");
+                Console.WriteLine($"Произошла непредвиденная ошибка. {ex.Message}");
             }
-        }
-        /// <summary>
-        /// Выводит группу отсортированный по здоровью.
-        /// </summary>
-        /// <param name="group"></param>
-        public static void WriteSortedGroup(IEnumerable<Creature> group)
-        {
-            Console.WriteLine("Сортировка предыдущего списка по здоровью");
-            group.OrderBy(x => x.Health).Take(10);
-            foreach (var item in group)
-            {
-                Console.WriteLine(item);
-            }
+            
         }
         /// <summary>
         /// Выводит группы перемноженные внутри.
@@ -85,9 +77,9 @@ namespace CreatureAnalyzer
         /// Выводит список отсортированный по здоровью.
         /// </summary>
         /// <param name="creatures">Список существ.</param>
-        public static void WriteCreaturesSortedByHeath(IEnumerable<Creature> creatures)
+        public static void WriteCreaturesSortedByHeath(IEnumerable<Creature> creatures, string message)
         {
-            Console.WriteLine("Сортировка по здоровью");
+            Console.WriteLine(message);
             creatures.OrderBy(x => x.Health).Take(10).ToList().ForEach(x => Console.WriteLine(x));
         }
         /// <summary>
