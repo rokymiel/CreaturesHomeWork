@@ -1,11 +1,14 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaturesLibrary", "CreaturesLibrary\CreaturesLibrary.csproj", "{AF1A8AEC-0E3B-4795-88E6-D7B2A5753381}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatureGenerator", "CreatureGenerator\CreatureGenerator.csproj", "{9F1D303C-28D7-48BF-A728-F9C52F53658F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatureAnalyzer", "CreatureAnalyzer\CreatureAnalyzer.csproj", "{438DA693-1798-4467-98A5-CF5F3D9BF341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatureTest", "CreatureTest\CreatureTest.csproj", "{141207D6-B951-48BC-9493-8138645B94BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,5 +28,15 @@ Global
 		{438DA693-1798-4467-98A5-CF5F3D9BF341}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{438DA693-1798-4467-98A5-CF5F3D9BF341}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{438DA693-1798-4467-98A5-CF5F3D9BF341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141207D6-B951-48BC-9493-8138645B94BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141207D6-B951-48BC-9493-8138645B94BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141207D6-B951-48BC-9493-8138645B94BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141207D6-B951-48BC-9493-8138645B94BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5A49E3F-ADAD-4911-ADDA-6B4E33BD62F4}
 	EndGlobalSection
 EndGlobal
