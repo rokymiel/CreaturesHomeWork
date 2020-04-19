@@ -64,5 +64,10 @@ namespace CreaturesLibrary
                 return second.Substring(0, (int)Math.Ceiling(second.Length / 2.0)) + first.Substring((int)Math.Ceiling(first.Length / 2.0));
             }
         }
+        public override bool Equals(object obj)
+        {
+            var other = obj as Creature;
+            return Name==other.Name&&MovementType==other.MovementType&&Health==other.Health;
+        }
     }
 }
