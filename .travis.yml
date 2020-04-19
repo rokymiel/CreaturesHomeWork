@@ -1,0 +1,10 @@
+language: csharp
+solution: HomeWorkTest.sln
+mono:
+  - latest
+  - 3.12.0
+  - 3.10.0
+
+branches:
+  only:
+    - master
